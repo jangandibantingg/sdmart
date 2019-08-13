@@ -8,7 +8,7 @@ require_once "control/uploadfile.php";
 require_once "control/function.php";
 
 
-if (isset($_GET['page'])) {
+if (isset($_GET['page'])) { 
   $page= $_GET['page'];
 }
 

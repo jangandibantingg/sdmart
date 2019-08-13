@@ -31,7 +31,7 @@
                                            ?>
                                             <tr id="row<?php echo $r['id_user'];?>">
                                                 <td id="level<?php echo $r['id_user'];?>"><?php echo "$r[level]"; ?>  </td>
-                                                <td id="level<?php echo $r['id_user'];?>"><?php echo "$r[id]"; ?>  </td>
+                                                <td id="id<?php echo $r['id_user'];?>"><?php echo "$r[id]"; ?>  </td>
                                                 <td id="nama<?php echo $r['id_user'];?>"> <?php echo "$r[nama]"; ?></td>
                                                 <td id="email<?php echo $r['id_user'];?>"><?php echo "$r[email]"; ?></td>
                                                 <td id="alamat<?php echo $r['id_user'];?>"><?php echo "$r[alamat]"; ?></td>
@@ -39,7 +39,7 @@
 
 
                                                 <td>
-                                                   <a href="javascript:void(0)" id="edit_button<?php echo $r['id_user'];?>"  onclick="edit_suplier('<?php echo $r['id_user'];?>');"> <i class="icon-pencil text-info"></i>  </a>
+                                                   <a href="javascript:void(0)" id="edit_button<?php echo $r['id_user'];?>"  onclick="edit_row('<?php echo $r['id_user'];?>');"> <i class="icon-pencil text-info"></i>  </a>
                                                     <input type='button' class="btn btn-success" id="save_button<?php echo $r['id_user'];?>" value="save" onclick="save_row('<?php echo $r['id_user'];?>');" style="display:none;">
                                                     <a href="javascript:void(0)" id="delete_button<?php echo $r['id_user'];?>" onclick="delete_row('<?php echo $r['id_user'];?>');"><i class="icon-trash"></i></a>
 

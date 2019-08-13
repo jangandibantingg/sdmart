@@ -96,7 +96,7 @@
             try
             {
                 // Ambil data dari database
-                $query = $this->db->prepare("SELECT * FROM user WHERE email = :email and blokir ='N'");
+                $query = $this->db->prepare("SELECT * FROM user WHERE id = :email and blokir ='N'");
                 $query->bindParam(":email", $email);
                 $query->execute();
                 $data = $query->fetch();

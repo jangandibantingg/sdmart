@@ -47,7 +47,6 @@ function save_row(id)
    if(response=="success")
    {
     document.getElementById("nama_kategori_menu"+id).innerHTML=name;
-
     document.getElementById("edit_button"+id).style.display="block";
     document.getElementById("save_button"+id).style.display="none";
    }
