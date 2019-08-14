@@ -6,8 +6,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">User list <?php echo "$member[id]"; ?></h4>
-                                <button data-toggle="modal" data-target="#add-contact"  class="btn btn-outline-info"><i class="ti-plus"></i> <i class="ti-user"></i> add </button>
+                                <h4 class="card-title">User list </h4>
+                                <button data-toggle="modal" data-target="#add-contact"  class="btn btn-outline-info"><i class="icon-user-follow"></i> add </button>
                                 <h6 class="card-subtitle"></h6>
                                 <div class="table-responsive">
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">

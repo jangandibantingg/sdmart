@@ -1,8 +1,9 @@
 <?php
 $server = "localhost";
+$database = "sdm";
 $username = "root";
 $password = "";
-$database = "kasir";
+
 
 
 $con=mysqli_connect($server,$username,$password,$database);

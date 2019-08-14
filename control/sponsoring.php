@@ -3,7 +3,7 @@
      session_start();
      include 'connect.php';
 
-     if($_POST['nama'] != '' && $_POST['email'] !='' && $_POST['no_hp'] !='' && $_POST['alamat'] !=''   ){
+     if($_POST['nama'] != ''   ){
          $nama    = $_POST['nama'];
          $email   = $_POST['email'];
          $alamat  = $_POST['alamat'];

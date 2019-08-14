@@ -25,7 +25,7 @@ if(isset($_POST['edit_row']))
 if(isset($_POST['delete_row']))
 {
  $row_no=$_POST['row_id'];
- mysqli_query($con,"update suplier set status='notactive'  where id_suplier='$row_no'");
+ mysqli_query($con,"DELETE from user where id_user='$row_no'");
  echo "success";
  exit();
 }

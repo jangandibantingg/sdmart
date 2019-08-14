@@ -61,7 +61,7 @@ function delete_row(id)
  $.ajax
  ({
   type:'post',
-  url:'control/modify.pengeluaran.php',
+  url:'control/modify.akun.php',
   data:{
    delete_row:'delete_row',
    row_id:id,

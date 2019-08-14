@@ -6,7 +6,12 @@ $total=$_POST['cash'] - $_POST['total'];
 $_SESSION['subtotal']  =$_POST['total'];
 $_SESSION['pembayaran']  =$_POST['cash'];
 $_SESSION['kembalian'] = $total;
-$_SESSION['id']=$_POST['id'];
+if ($_SESSION['id'] == '') {
+  $_SESSION['id']=$_SESSION['user_session'];
+}else {
+  $_SESSION['id']=$_POST['id'];
+}
+
 
 
 if($total < 0){

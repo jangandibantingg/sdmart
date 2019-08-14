@@ -1,7 +1,7 @@
 <?php
     // Konfigurasi database anda
     $host = "localhost";
-    $dbname = "kasir";
+    $dbname = "sdm";
     $username = "root";
     $password = "";
 

@@ -105,7 +105,7 @@
                 if($query->rowCount() > 0){
                     // jika password yang dimasukkan sesuai dengan yg ada di database
                     if(md5($password) == $data['password']){
-                        $_SESSION['user_session'] = $data['email'];
+                        $_SESSION['user_session'] = $data['id'];
                         $this->true = "Login Success Redirect to dashboarrd <script type='text/javascript'> window.location.href = './beranda.aspx' </script>";
                         $query = $this->db->prepare("update user set lastlogin=:lastlogin where email=:email");
                         $query->bindParam(":lastlogin", $date);
@@ -118,7 +118,7 @@
                         return false;
                     }
                 }else{
-                    $this->error = "Incorect email";
+                    $this->error = "Incorect ID";
                     return false;
                 }
             } catch (PDOException $e) {
@@ -138,8 +138,8 @@
 
         public function getuser($username){
           try {
-            $query = $this->db->prepare("SELECT * FROM user WHERE email = :email");
-            $query->bindParam(":email", $username);
+            $query = $this->db->prepare("SELECT * FROM user WHERE id = :id");
+            $query->bindParam(":id", $username);
             $query->execute();
             return $query->fetch();
           } catch (Exception $e) {

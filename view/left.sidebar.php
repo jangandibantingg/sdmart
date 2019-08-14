@@ -28,7 +28,7 @@
                   <a class="waves-effect waves-dark" href="./akun.aspx"  aria-expanded="false"><i class=" ti-user"></i> <span class="hide-menu">Akun</span></a>
                 </li>
                 <li>
-                  <a class="waves-effect waves-dark" href="./sponsoring.aspx"  aria-expanded="false"><i class=" ti-link"></i> <span class="hide-menu">Sponsoring</span></a>
+                  <a class="waves-effect waves-dark" href="./sponsoring.aspx"  aria-expanded="false"><i class=" ti-link"></i> <span class="hide-menu"><?php echo "$member[id]"; ?></span></a>
                 </li>
 
 
