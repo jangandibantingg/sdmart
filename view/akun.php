@@ -26,11 +26,19 @@
                                           <?php
                                           $p=mysqli_query($con, "select * from user order by id_user asc");
                                           while ($r=mysqli_fetch_array($p)) {
+                                         if ($r['level'] == 'admin') {
+                                           $level = "<i class='ti-harddrive text-danger'></i> ";
+                                         }elseif($r['level'] == 'invest' || $r['level'] == 'akun') {
+                                           $level = "<i class='icon-layers text-info'></i> ";
+                                         }else {
+                                           $level = "<i class='ti-user text-success'></i> ";
+                                         }
+
+                                          ?>
 
 
-                                           ?>
                                             <tr id="row<?php echo $r['id_user'];?>">
-                                                <td id="level<?php echo $r['id_user'];?>"><?php echo "$r[level]"; ?>  </td>
+                                                <td id="level<?php echo $r['id_user'];?>"><?php echo "$level"; ?>  </td>
                                                 <td id="id<?php echo $r['id_user'];?>"><?php echo "$r[id]"; ?>  </td>
                                                 <td id="nama<?php echo $r['id_user'];?>"> <?php echo "$r[nama]"; ?></td>
                                                 <td id="email<?php echo $r['id_user'];?>"><?php echo "$r[email]"; ?></td>

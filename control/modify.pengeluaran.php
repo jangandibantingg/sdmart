@@ -14,7 +14,7 @@ if(isset($_POST['edit_row']))
 
 
 
- mysqli_query($con, "update arus_khas set date='$date', kredit='$kredit', keterangan='$keterangan' where id_arus_khas='$row' ");
+ mysqli_query($con, "update arus_khas set dt='$date', kredit='$kredit', keterangan='$keterangan' where id_arus_khas='$row' ");
  echo "success";
  exit();
 }

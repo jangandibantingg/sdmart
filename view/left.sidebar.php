@@ -63,7 +63,9 @@
                 <li>
                   <a class="waves-effect waves-dark" href="./list-pembelian.aspx"  aria-expanded="false"><i class="ti-clipboard"></i> <span class="hide-menu">list Pembelian</span></a>
                 </li>
-
+                <?php
+                if ($member['level'] == 'admin' ) {
+                 ?>
                                 <li class="nav-small-cap">--- Akuntansi</li>
                                 <li>
                                   <a class="waves-effect waves-dark" href="./inventori.aspx"  aria-expanded="false"><i class="icon-support"></i> <span class="hide-menu">Inventori</span></a>
@@ -90,7 +92,10 @@
                                 <li>
                                   <a class="waves-effect waves-dark" href="./webmaster.aspx"  aria-expanded="false"><i class=" icon-globe"></i> <span class="hide-menu">Web master</span></a>
                                 </li>
-
+                <?php } ?>
+                <li>
+                  <a class="waves-effect waves-dark" href="./data-menu.aspx"  aria-expanded="false"><i class=" icon-folder"></i> <span class="hide-menu">Data Menu produk</span></a>
+                </li>
                 <li class="nav-small-cap">--- SUPPORT</li>
                 <li> <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-circle-o text-danger"></i><span class="hide-menu">Documentation</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="logout.html" aria-expanded="false"><i class="fa fa-circle-o text-success"></i><span class="hide-menu">Log Out</span></a></li>

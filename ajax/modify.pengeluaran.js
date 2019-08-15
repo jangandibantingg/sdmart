@@ -6,9 +6,9 @@ function edit_row(id)
 
 
 
-  document.getElementById("date"+id).innerHTML="<input type='date' class='form-control' id='date"+id+"' value='"+date+"'>";
-  document.getElementById("keterangan"+id).innerHTML="<input type='text' class='form-control' id='keterangan"+id+"' value='"+keterangan+"'>";
-  document.getElementById("kredit"+id).innerHTML="<input type='text' class='form-control' id='kredit"+id+"' value='"+kredit+"'>";
+  document.getElementById("date"+id).innerHTML="<input type='date' class='form-control' id='date_value"+id+"' value='"+date+"'>";
+  document.getElementById("keterangan"+id).innerHTML="<input type='text' class='form-control' id='keterangan_value"+id+"' value='"+keterangan+"'>";
+  document.getElementById("kredit"+id).innerHTML="<input type='text' class='form-control' id='kredit_value"+id+"' value='"+kredit+"'>";
 
 
  document.getElementById("edit_button"+id).style.display="none";
@@ -18,9 +18,9 @@ function edit_row(id)
 
 function save_row(id)
 {
-  var date=document.getElementById("date"+id).innerHTML;
-  var keterangan=document.getElementById("keterangan"+id).innerHTML;
-  var kredit=document.getElementById("kredit"+id).innerHTML;
+  var date=document.getElementById("date_value"+id).value;
+  var keterangan=document.getElementById("keterangan_value"+id).value;
+  var kredit=document.getElementById("kredit_value"+id).value;
 
 
  $.ajax
@@ -33,8 +33,6 @@ function save_row(id)
    keterangan:keterangan,
    kredit:kredit,
    row_id:id
-
-
   },
   success:function(response) {
    if(response=="success")
@@ -42,6 +40,8 @@ function save_row(id)
      document.getElementById("date"+id).innerHTML=date;
      document.getElementById("kredit"+id).innerHTML=kredit;
     document.getElementById("keterangan"+id).innerHTML=keterangan;
+
+
     document.getElementById("edit_button"+id).style.display="block";
     document.getElementById("save_button"+id).style.display="none";
    }
