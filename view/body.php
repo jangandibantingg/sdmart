@@ -121,7 +121,7 @@
                             </ol>
                             &nbsp; <a href="./penjualan.aspx" class="btn btn-outline-info"><i class="ti-receipt"></i> Jual</a>
                             &nbsp; <a href="./pembelian.aspx" class="btn btn-outline-info"><i class="ti-shopping-cart"></i> Beli </a>
-                            &nbsp; <a href="./biaya.aspx" class="btn btn-outline-info"><i class="ti-wallet"></i> Pengeluaran </a>
+                            <!-- &nbsp; <a href="./biaya.aspx" class="btn btn-outline-info"><i class="ti-wallet"></i> Pengeluaran </a> -->
                           <!-- &nbsp; <button data-toggle="modal" data-target="#buttonbiaya"  class="btn btn-outline-info"><i class="ti-wallet"></i> pengeluaran </button> -->
                         </div>
                     </div>

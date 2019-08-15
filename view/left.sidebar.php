@@ -14,22 +14,37 @@
                     </ul>
                 </li> -->
 <br>
-                <li>
-                  <a class="waves-effect waves-dark" href="./beranda.aspx"  aria-expanded="false"><i class=" ti-pie-chart"></i> <span class="hide-menu">Dashboard</span></a>
-                </li>
-                <li>
-                  <a class="waves-effect waves-dark" href="./khas.aspx"  aria-expanded="false"><i class="mdi mdi-bank"></i> <span class="hide-menu">Khas & bank</span></a>
-                </li>
-                <li>
-                  <a class="waves-effect waves-dark" href="./biaya.aspx"  aria-expanded="false"><i class=" ti-wallet"></i> <span class="hide-menu">Pengeluaran</span></a>
-                </li>
 
-                <li>
-                  <a class="waves-effect waves-dark" href="./akun.aspx"  aria-expanded="false"><i class=" ti-user"></i> <span class="hide-menu">Akun</span></a>
-                </li>
-                <li>
-                  <a class="waves-effect waves-dark" href="./sponsoring.aspx"  aria-expanded="false"><i class=" ti-link"></i> <span class="hide-menu"><?php echo "$member[id]"; ?></span></a>
-                </li>
+
+                <?php
+                if ($member['level'] == 'admin' ) {
+                 ?>
+                 <li>
+                   <a class="waves-effect waves-dark" href="./beranda.aspx"  aria-expanded="false"><i class=" ti-pie-chart"></i> <span class="hide-menu">Dashboard</span></a>
+                 </li>
+                 <li>
+                   <a class="waves-effect waves-dark" href="./khas.aspx"  aria-expanded="false"><i class="mdi mdi-bank"></i> <span class="hide-menu">Khas & bank</span></a>
+                 </li>
+                 <li>
+                   <a class="waves-effect waves-dark" href="./biaya.aspx"  aria-expanded="false"><i class=" ti-wallet"></i> <span class="hide-menu">Pengeluaran</span></a>
+                 </li>
+
+                 <li>
+                   <a class="waves-effect waves-dark" href="./akun.aspx"  aria-expanded="false"><i class=" ti-user"></i> <span class="hide-menu">Akun</span></a>
+                 </li>
+
+                 <?php
+               }elseif ($member['level'] == 'invest' || $member['level'] == 'akun') {
+                 ?>
+                 <li>
+                   <a class="waves-effect waves-dark" href="./profile.aspx"  aria-expanded="false"><i class="icon-credit-card"></i> <span class="hide-menu"><?php echo "$member[nama]"; ?></span> <small><?php echo "$member[id]"; ?></small> </a>
+                 </li>
+                 <li>
+                   <a class="waves-effect waves-dark" href="./sponsoring.aspx"  aria-expanded="false"><i class=" icon-user-follow"></i> <span class="hide-menu">sponsoring</span></a>
+                 </li>
+                 <?php
+               }?>
+
 
 
 

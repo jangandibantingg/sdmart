@@ -7,7 +7,7 @@
 
     <div class="form-group ">
         <div class="col-xs-12">
-            <input class="form-control" type="text" required="" name="email" placeholder="email"> </div>
+            <input class="form-control" type="text" required="" name="email" placeholder="User ID"> </div>
     </div>
     <div class="form-group">
         <div class="col-xs-12">
