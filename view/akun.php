@@ -7,10 +7,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">User list </h4>
-                                <button data-toggle="modal" data-target="#add-contact"  class="btn btn-outline-info"><i class="icon-user-follow"></i> add </button>
+                                <button data-toggle="modal" data-target="#add-contact"  class="btn btn-outline-info"><i class="icon-user-follow"></i> Add </button>
+                                <button data-toggle="modal" data-target="#edit-role"  class="btn btn-outline-info"><i class="ti-harddrive"></i> Edit Role </button>
                                 <h6 class="card-subtitle"></h6>
-                                <div class="table-responsive">
-                                    <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
+                              <div class="table-responsive m-t-40">
+                                     <table id="myTable" class="table table-striped">
                                         <thead>
                                             <tr>
                                               <th>Role</th>
@@ -27,11 +28,11 @@
                                           $p=mysqli_query($con, "select * from user order by id_user asc");
                                           while ($r=mysqli_fetch_array($p)) {
                                          if ($r['level'] == 'admin') {
-                                           $level = "<i class='ti-harddrive text-danger'></i> ";
+                                           $level = "<i class='ti-harddrive text-danger'> admin</i>  ";
                                          }elseif($r['level'] == 'invest' || $r['level'] == 'akun') {
-                                           $level = "<i class='icon-layers text-info'></i> ";
+                                           $level = "<i class='icon-layers text-info'> seller</i> ";
                                          }else {
-                                           $level = "<i class='ti-user text-success'></i> ";
+                                           $level = "<i class='ti-user text-success'> ID</i> ";
                                          }
 
                                           ?>

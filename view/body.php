@@ -12,10 +12,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="library/assets/images/favicon.png">
     <title><?php echo "$web[title] $page"; ?></title>
     <!-- Custom CSS -->
+
+    <link rel="stylesheet" type="text/css" href="http://eliteadmin.themedesigner.in/demos/bt4/assets/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="http://eliteadmin.themedesigner.in/demos/bt4/assets/node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
+
     <link href="library/material/dist/css/style.min.css" rel="stylesheet">
     <link href="library/material/dist/css/pages/floating-label.css" rel="stylesheet">
     <link href="library/assets/node_modules/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-   <link href="library/assets/node_modules/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="library/assets/node_modules/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
    <!-- page css -->
     <link href="library/material/dist/css/pages/tab-page.css" rel="stylesheet">
 
@@ -272,7 +276,60 @@
     <script src="library/assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
     <!--Custom JavaScript -->
     <script src="library/material/dist/js/custom.min.js"></script>
+    <script src="http://eliteadmin.themedesigner.in/demos/bt4/assets/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="http://eliteadmin.themedesigner.in/demos/bt4/assets/node_modules/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
 
+    <script>
+        $(function () {
+            $('#myTable').DataTable();
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function (settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function (group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+            // Order by the grouping
+            $('#example tbody').on('click', 'tr.group', function () {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table.order([2, 'desc']).draw();
+                } else {
+                    table.order([2, 'asc']).draw();
+                }
+            });
+            // responsive table
+            $('#config-table').DataTable({
+                responsive: true
+            });
+            $('#example23').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+            $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
+        });
+
+    </script>
 </body>
 
 </html>

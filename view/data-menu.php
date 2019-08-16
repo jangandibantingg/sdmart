@@ -98,7 +98,7 @@
                             </thead>
                             <tbody>
                               <?php
-                                $a=mysqli_query($con,"select * from kategori_menu  where username='$_SESSION[user_session]' order by id_kategori_menu asc");
+                                $a=mysqli_query($con,"select * from kategori_menu  where order by id_kategori_menu asc");
                                 while ($r=mysqli_fetch_array($a)) {
                                ?>
                               <tr id="row<?php echo $r['id_kategori_menu'];?>">

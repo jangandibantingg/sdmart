@@ -36,7 +36,7 @@
                                     <select class="form-control" name="suplier">
                                         <option value="">pilih</option>
                                         <?php
-                                        $p=mysqli_query($con, "select * from suplier order by nama_suplier asc");
+                                        $p=mysqli_query($con, "select * from suplier where status='active' order by nama_suplier asc");
                                         while ($r=mysqli_fetch_array($p)) {
                                           echo "<option value='$r[id_suplier]'>$r[nama_suplier]</option>";
                                         }
@@ -59,7 +59,7 @@
 
                             mysqli_query($con, "insert into item (kode_item, nama_item, satuan, qty, id_suplier, price ,username, date, sell) values
                             ('$kode','$_POST[namabarang]','$_POST[satuan]','$_POST[qty]','$_POST[suplier]','$_POST[price]','$_SESSION[user_session]','$date','$_POST[sell]')");
-                            
+
                           }
 
                              ?>

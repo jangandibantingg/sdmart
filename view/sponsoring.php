@@ -7,10 +7,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Sponsoring</h4>
-                                <button data-toggle="modal" data-target="#add-contact"  class="btn btn-outline-info"><i class="ti-plus"></i> <i class="ti-link"></i> sponsoring </button>
+                                <button data-toggle="modal" data-target="#add-contact"  class="btn btn-outline-info"><i class="icon-user-follow"></i>  sponsoring </button>
                                 <h6 class="card-subtitle"></h6>
                                 <div class="table-responsive">
-                                    <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
+                                       <table id="config-table" class="table display table-bordered table-striped no-wrap">
                                         <thead>
                                             <tr>
                                                 <th>Role</th>
@@ -26,8 +26,7 @@
                                           <?php
                                           $p=mysqli_query($con, "select * from user where sponsoring='$member[id]' order by id_user asc");
 
-                                          while ($r=mysqli_fetch_array($p)) {
-                                            $p=mysqli_query($con, "select * from user order by id_user asc");
+
                                             while ($r=mysqli_fetch_array($p)) {
                                            if ($r['level'] == 'admin') {
                                              $level = "<i class='ti-harddrive text-danger'></i> ";
