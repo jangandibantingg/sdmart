@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agama`
+-- Table structure for table `agama`    
 --
 
 CREATE TABLE `agama` (
